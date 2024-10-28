@@ -62,7 +62,7 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 
 ## STEP 4: Configure the Application and Network rule on the Azure Firewall to specifically allow certain applications and send request to specific DNS Servers.
 
-** I'll be creating an application rule that allows outbound access to www.bing.com.**
+**I'll be creating an application rule that allows outbound access to www.bing.com.**
 - Now back to the Test-FW01 firewall, On the Test-FW01 blade, in the Settings section, click Rules (classic).
 - click the Application rule collection tab, and then click + Add application rule collection.
 - In the Application rule, I set the target FQDN to bing.com, ***since it’s the only domain we want every machine on our Subnet to be able to connect to, with source IP being the Subnet IP address range.***
@@ -70,9 +70,14 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 
 ![SOC](App Rule for Bing)
 
-**NEXT** Create and Configure a Network Rule
-- 
+### Next: Create and Configure a Network Rule
+- Set the network rule that allows traffic routed through specific know DNS servers, to DNS port 53.
+- This allows network traffic between these DNS servers, and the Subnet. ***10.0.2.0/24***
 
+## STEP 5: Configure the custom primary and secondary DNS servers on our Work-VM NIC, to use the specific DNS servers we configured.
+- On the Srv-Work blade, in the Settings section, click Networking.
+- On the Srv-Work ***Virtual Machine*** | Networking blade, click the link next to the Network interface entry.
+ 
 
 
 
