@@ -51,9 +51,13 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 
 ![SOC]( ASSOciate Subnet)
 
+**NEXT** Associate The Firewall Route to a Route
+- Back on the Firewall-route blade,
+- In the Settings section, click Routes and then click + Add.
+- On the Add route blade, specify the following settings: ***This route, automatically lists the Firewall’s private IP Address as the next hop address when sending out traffic out of the subnet.***
+This way, all traffic gets routed through the Azure Firewall first.
 
 
-- Back on the Firewall-route blade, in the Settings section, click Routes and then click + Add.
 
   
 
