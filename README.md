@@ -96,7 +96,8 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
  
 - After successful login to the ***srv-jump server***
 - Right-click on the Start menu, select "Run" from the context menu, and in the Run dialog box, enter the following command to connect to Srv-Work:
-   ***mstsc /v:Srv-Work***
+
+      ***mstsc /v:Srv-Work***
 
 
 
