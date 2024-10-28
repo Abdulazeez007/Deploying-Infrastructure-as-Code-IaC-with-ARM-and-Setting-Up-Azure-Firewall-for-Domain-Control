@@ -69,18 +69,21 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - In the Application rule, I set the target FQDN to bing.com, ***since it’s the only domain we want every machine on our Subnet to be able to connect to, with source IP being the Subnet IP address range.***
 - Click Add to add the Target FQDNs-based application rule.
 
-![SOC](App Rule for Bing)
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Application%20Rule.jpg)
 
 ### Next: Create and Configure a Network Rule
 - Set the network rule that allows traffic routed through specific know DNS servers, to DNS port 53.
 - This allows network traffic between these DNS servers, and the Subnet. ***10.0.2.0/24***
+
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Net-Rule.jpg)
 
 ## STEP 5: Configure the virtual machine DNS servers
 - Configure the custom primary and secondary DNS servers on our Work-VM NIC, to use the specific DNS servers we configured.
 - On the Srv-Work blade, in the Settings section, click Networking.
 - On the Srv-Work ***Virtual Machine*** | Networking blade, click the link next to the Network interface entry.
 
-![SOC](Srv-workNetwork Setting)
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/SrvWork-Net.jpg)
+
 - On the network interface blade, in the Settings section, click DNS servers, select the Custom option.
 - Then next, add the two DNS Servers ***209.244.0.3 and 209.244.0.4***, so all outbound HTTP/s requests will be routed to these DNS servers.
 - click save and wait for changes to be Deployed
