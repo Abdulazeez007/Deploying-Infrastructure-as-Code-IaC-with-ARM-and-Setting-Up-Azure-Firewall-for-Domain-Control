@@ -55,7 +55,25 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - Back on the Firewall-route blade,
 - In the Settings section, click Routes and then click + Add.
 - On the Add route blade, specify the following settings: ***This route, automatically lists the Firewall’s private IP Address as the next hop address when sending out traffic out of the subnet.***
-This way, all traffic gets routed through the Azure Firewall first.
+- This way, all traffic gets routed through the Azure Firewall first.
+-  Click Add to add the route.
+
+![SOC]( Add Route)
+
+## STEP 4: Configure the Application and Network rule on the Azure Firewall to specifically allow certain applications and send request to specific DNS Servers.
+
+** I'll be creating an application rule that allows outbound access to www.bing.com.**
+- Now back to the Test-FW01 firewall, On the Test-FW01 blade, in the Settings section, click Rules (classic).
+- click the Application rule collection tab, and then click + Add application rule collection.
+- In the Application rule, I set the target FQDN to bing.com, ***since it’s the only domain we want every machine on our Subnet to be able to connect to, with source IP being the Subnet IP address range.***
+- Click Add to add the Target FQDNs-based application rule.
+
+![SOC](App Rule for Bing)
+
+**NEXT** Create and Configure a Network Rule
+- 
+
+
 
 
 
