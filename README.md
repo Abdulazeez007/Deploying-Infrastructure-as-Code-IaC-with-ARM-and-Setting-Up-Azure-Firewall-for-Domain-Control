@@ -13,6 +13,46 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 **NETWORK TOPOLOGY**  
 ![SOC]()
 
+📋 Steps to Completion
+1️⃣ Deploying the Lab Environment with ARM Templates
+Goal: Use ARM Templates to set up the cloud infrastructure.
+Steps:
+Launch Azure Portal and navigate to Deploy a Custom Template.
+Select Build your own template in the editor and upload the ARM .json template file.
+Configure necessary deployment settings and initiate resource deployment, establishing the cloud environment as IaC.
+2️⃣ Configuring and Deploying Azure Firewall
+Goal: Deploy and configure Azure Firewall to manage traffic within the VNET.
+Steps:
+In Azure Portal, search for Firewall and select Create.
+Deploy the firewall in the VNET created by the ARM template, assigning a public IP and configuring required settings.
+Confirm deployment and ensure the firewall is live and fully operational.
+3️⃣ Creating and Associating Firewall Routing Rules
+Goal: Direct all outbound traffic through Azure Firewall by defining custom routes.
+Steps:
+In the Azure Portal, search for Route Tables and create a new route table.
+Associate the route table with the target subnet, designating Azure Firewall as the next hop for outbound traffic.
+Add a specific route to the route table, ensuring traffic passes through Azure Firewall.
+
+4️⃣ Defining Firewall Application and Network Rules
+Goal: Allow only approved domains and DNS traffic through the firewall.
+Steps:
+On the firewall blade, configure an Application Rule allowing access to bing.com from the designated IP range.
+Set up a Network Rule to permit DNS traffic on port 53, routing it through specified DNS servers for additional security.
+
+5️⃣ Customizing DNS Settings on the Work-VM NIC
+Goal: Redirect outbound DNS requests via specific DNS servers for controlled access.
+Steps:
+Access Networking on the Work-VM and navigate to DNS Servers settings.
+Select Custom DNS and enter the primary and secondary DNS server addresses.
+Save changes, ensuring DNS traffic adheres to the specified security parameters.
+
+6️⃣ Testing Firewall and Validating Traffic Controls
+Goal: Verify that Azure Firewall restricts outbound access to approved domains.
+Steps:
+Use RDP to log into the Jump Server and access the Work Server.
+Open Internet Explorer and attempt to access bing.com (allowed) and other domains like google.com (blocked).
+Confirm that only the permitted domain is accessible, verifying the firewall’s effectiveness.
+
 ## STEP 1:  Use ARM Template to Deploy Lab Environment.
 - First, I launched my Azure portal, then in the Azure portal, search Deploy a custom template and press the Enter key.
 - On the Custom deployment blade, click the Build your own template in the editor option.
@@ -98,8 +138,53 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - Right-click on the Start menu, select "Run" from the context menu, and in the Run dialog box, enter the following command to connect to Srv-Work:
 
       ***mstsc /v:Srv-Work***
-
-
-
+- Login using the same credential with the ***Srv-jump***
   
+![SOC]()
 
+- After Login into the ***Srv-Work Server*** from within the ***Srv-Jump Server***
+- Now we can lauch Internet explorer and browse to www.bing.com
+- Which is successful as expected due to the application firewall rules we had early configured
+  
+![SOC]()
+
+### Now, let me try another domain, like Facebook.com.
+- And as expected, this action was denied, because the only application allowed to return traffic to the subnet was Google.com.
+
+![SOC]()
+***Action Failed***
+
+**Now,** I have successfully verified that my firewall is configured correctly and is functioning as intended. This confirmation ensures that the firewall is effectively managing network traffic, enforcing security policies, and protecting the network from unauthorized access. The successful implementation of the firewall contributes to the overall security posture of the environment, allowing for controlled and monitored access to resources.
+
+
+🔚 Conclusion
+
+This brings us to the conclusion of my lab project, where I successfully achieved all key objectives and gained valuable insights into cloud infrastructure and security configuration.
+
+📊 Project Highlights & Key Takeaways
+
+Throughout this project, I:
+
+🌐 Deployed a Cloud Environment: Leveraged Azure Resource Manager (ARM) templates to provision a cloud environment using Infrastructure as Code (IaC) principles.
+
+🔥 Configured Azure Firewall for VNET: Implemented and configured Azure Firewall within a Virtual Network (VNET) to enforce traffic control.
+
+🎯 Set DNS-based Traffic Filtering: Directed firewall traffic to specific DNS servers, allowing only traffic from designated domain names, enhancing network security.
+
+🔐 Established Secure Server Access: Configured Remote Desktop Protocol (RDP) to securely jump between two servers, reinforcing access control and operational security.
+
+Thank you for following along with this project!
+
+💡 Final Reminder
+Remember: always delete and deprovision any cloud resources when they’re no longer in use to optimize costs and maintain a secure environment.
+
+## Clean up resources
+- Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not incur unexpected costs.
+- In the Azure portal, open the Cloud Shell by clicking the first icon in the top right of the Azure Portal. If prompted, click PowerShell and Create storage.
+- Ensure PowerShell is selected in the drop-down menu in the upper-left corner of the Cloud Shell pane.
+- In the PowerShell session within the Cloud Shell pane, run the following to remove the resource group you created in this lab:
+
+      ***Remove-AzResourceGroup -Name "AZ500LAB08" -Force -AsJob***
+- Close the Cloud Shell pane.
+
+![SOC]()
