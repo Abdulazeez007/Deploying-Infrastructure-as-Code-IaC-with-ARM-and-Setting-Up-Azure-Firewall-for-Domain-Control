@@ -59,7 +59,7 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - This way, all traffic gets routed through the Azure Firewall first.
 -  Click Add to add the route.
 
-![SOC]( Add Route)
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/routes.jpg)
 
 ## STEP 4: Configure the Application and Network rule on the Azure Firewall to specifically allow certain applications and send request to specific DNS Servers.
 
