@@ -74,9 +74,25 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - Set the network rule that allows traffic routed through specific know DNS servers, to DNS port 53.
 - This allows network traffic between these DNS servers, and the Subnet. ***10.0.2.0/24***
 
-## STEP 5: Configure the custom primary and secondary DNS servers on our Work-VM NIC, to use the specific DNS servers we configured.
+## STEP 5: Configure the virtual machine DNS servers
+- Configure the custom primary and secondary DNS servers on our Work-VM NIC, to use the specific DNS servers we configured.
 - On the Srv-Work blade, in the Settings section, click Networking.
 - On the Srv-Work ***Virtual Machine*** | Networking blade, click the link next to the Network interface entry.
+
+![SOC](Srv-workNetwork Setting)
+- On the network interface blade, in the Settings section, click DNS servers, select the Custom option.
+- Then next, add the two DNS Servers ***209.244.0.3 and 209.244.0.4***, so all outbound HTTP/s requests will be routed to these DNS servers.
+- click save and wait for changes to be Deployed
+
+## STEP 6: Test The firewall rules
+- The Firewall rules by using RDP to login to the jump_server,
+- Then connect to the work_server using RDP again, from my jump_server.
+- Test the firewall by attempting to visit certain domains.
+
+**First,** Connect and download the RDP File from the jump server.
+- Open the RDP file and enter the login credentials that you created during the Infrastructure as Code provisioning process.
+
+![SOC]()
  
 
 
