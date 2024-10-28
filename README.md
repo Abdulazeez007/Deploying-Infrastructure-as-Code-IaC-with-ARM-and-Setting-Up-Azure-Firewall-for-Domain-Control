@@ -96,7 +96,7 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 **First,** Connect and download the RDP File from the jump server.
 - Open the RDP file and enter the login credentials that you created during the Infrastructure as Code provisioning process.
 
-![SOC]()
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Srv-Jump%20Login.jpg)
  
 - After successful login to the ***srv-jump server***
 - Right-click on the Start menu, select "Run" from the context menu, and in the Run dialog box, enter the following command to connect to Srv-Work:
@@ -104,18 +104,18 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
       ***mstsc /v:Srv-Work***
 - Login using the same credential with the ***Srv-jump***
   
-![SOC]()
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Mstsc.jpg)
 
 - After Login into the ***Srv-Work Server*** from within the ***Srv-Jump Server***
 - Now we can lauch Internet explorer and browse to www.bing.com
 - Which is successful as expected due to the application firewall rules we had early configured
   
-![SOC]()
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Bing-success.jpg)
 
 ### Now, let me try another domain, like Facebook.com.
 - And as expected, this action was denied, because the only application allowed to return traffic to the subnet was Google.com.
 
-![SOC]()
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Browsefailed.jpg)
 ***Action Failed***
 
 **Now,** I have successfully verified that my firewall is configured correctly and is functioning as intended. This confirmation ensures that the firewall is effectively managing network traffic, enforcing security policies, and protecting the network from unauthorized access. The successful implementation of the firewall contributes to the overall security posture of the environment, allowing for controlled and monitored access to resources.
