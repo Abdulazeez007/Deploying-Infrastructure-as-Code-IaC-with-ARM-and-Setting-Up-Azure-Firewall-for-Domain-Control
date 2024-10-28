@@ -11,7 +11,7 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 6. ✅ Test the Firewall  
 
 **NETWORK TOPOLOGY**  
-![SOC]()
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Topology.jpg)
 
 
 ## STEP 1:  Use ARM Template to Deploy Lab Environment.
@@ -20,12 +20,12 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - click on load file, and select the ARM template which is a .json file.
 - Upload ARM template (Download template fromAzure AZ500 Github Lab ***https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Allfiles/Labs/08/template.json***)
 
-![SOC]()
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Template.jpg)
 
 - Edit Template
 - Review and Create
 
-![SOC](Deployment successful)
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/ARM-Deployed.jpg)
 
 
 ## STEP 2: Configure and Deploy Azure Firewall
