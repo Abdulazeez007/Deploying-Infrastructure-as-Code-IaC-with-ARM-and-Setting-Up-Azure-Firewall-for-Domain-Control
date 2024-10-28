@@ -137,7 +137,6 @@ Successfully deploying and configuring Azure Firewall using ARM Templates showca
 
 🔐 Established Secure Server Access: Configured Remote Desktop Protocol (RDP) to securely jump between two servers, reinforcing access control and operational security.
 
-Thank you for following along with this project!
 
 💡 Final Reminder
 Remember: always delete and deprovision any cloud resources when they’re no longer in use to optimize costs and maintain a secure environment.
@@ -151,4 +150,4 @@ Remember: always delete and deprovision any cloud resources when they’re no lo
       ***Remove-AzResourceGroup -Name "AZ500LAB08" -Force ***
 - Close the Cloud Shell pane.
 
-![SOC]()
+***Thank you for following along with this project! See you Again Soon***
