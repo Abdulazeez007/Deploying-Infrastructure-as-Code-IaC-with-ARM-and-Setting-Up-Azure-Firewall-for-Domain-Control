@@ -34,14 +34,14 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 **Configure Firewall settings:**
 - Deploy Firewall to specific VNET that was deployed with the ARM Template, and configure public IP and other neccesary settings.
 
-![SOC](Firewall VNET)
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/CreateFW.jpg)
 
 ## STEP 3: Create a default route for our workload subnet, (this route will configure outbound traffic throught the firewall.)
 - In the Azure Portal, Search Route Tables, and create a new route.
 - configure and create new route Table.
 - click create, and wait for the provisioning to complete.
 
-![SOC](Route Table)
+![SOC](https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/Route%20Table.jpg)
 
 
 **NEXT** Associate the Firewall Route to a Subnet ***Workload-SN***  
@@ -50,7 +50,7 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 - On the Associate subnet blade, specify the following settings:
 - Click OK to associate the firewall to the virtual network subnet.
 
-![SOC]( ASSOciate Subnet)
+![SOC]( https://github.com/Virus192/Deploying-Infrastructure-as-Code-IaC-with-ARM-and-Setting-Up-Azure-Firewall-for-Domain-Control/blob/main/ARM-Firewall/FW-Route-Subnet.jpg)
 
 **NEXT** Associate The Firewall Route to a Route
 - Back on the Firewall-route blade,
