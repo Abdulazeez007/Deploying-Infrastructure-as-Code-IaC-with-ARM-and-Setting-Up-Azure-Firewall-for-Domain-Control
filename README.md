@@ -11,3 +11,14 @@ This project focuses on setting up Infrastructure as Code (IaC) using Azure Reso
 6. ✅ Test the Firewall  
 
 **NETWORK TOPOLOGY**  
+![SOC]()
+
+## STEP 1
+- Use ARM Template to Deploy Lab Environment.
+- First, I launched my Azure portal, then in the Azure portal, search Deploy a custom template and press the Enter key.
+- On the Custom deployment blade, click the Build your own template in the editor option.
+- click on load file, and select the ARM template which is a .json file.
+- Upload ARM template (Download template fromAzure AZ500 Github Lab ***https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Allfiles/Labs/08/template.json***)
+
+![SOC]()
+
